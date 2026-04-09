@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { TrendingUp, Users, Target, Award, Activity, BarChart3, Zap, TrendingDown, ArrowRight, Sparkles, Rocket, Crown } from 'lucide-react';
 import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { MarketTicker } from '@/components/market-ticker';
 
 const Dashboard = () => {
   const [user, setUser] = useState<any>(null);
@@ -56,7 +57,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-hidden bg-background">
       <Header />
       <div className="container mx-auto px-4 py-8">
         {/* New Strategies Advertisement */}
@@ -116,7 +117,11 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        
+
+        <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2">
+          <MarketTicker />
+        </div>
+
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-2">Welcome back, {user?.name}!</h1>
           <p className="text-muted-foreground">Here's your trading overview</p>
