@@ -1,0 +1,17 @@
+{
+  "name": "fullstack-app",
+  "private": true,
+  "scripts": {
+    "start": "node init && npm run start:backend",
+    "start:backend": "node init && cd backend && npm start",
+    "start:frontend": "node init && cd frontend && npm run dev",
+    "dev": "node init && npm run start:backend",
+    "install": "npm run install:all",
+    "install:all": "cd frontend && npm install && cd ../backend && npm install",
+    "build": "node init && cd frontend && npm run build",
+    "build:frontend": "node init && cd frontend && npm run build"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
