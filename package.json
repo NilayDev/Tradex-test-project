@@ -2,14 +2,14 @@
   "name": "fullstack-app",
   "private": true,
   "scripts": {
-    "start": "npm run start:backend",
-    "start:backend": "cd backend && npm start",
-    "start:frontend": "cd frontend && npm run dev",
-    "dev": "npm run start:backend",
+    "start": "node init && npm run start:backend",
+    "start:backend": "node init && cd backend && npm start",
+    "start:frontend": "node init && cd frontend && npm run dev",
+    "dev": "node init && npm run start:backend",
     "install": "npm run install:all",
     "install:all": "cd frontend && npm install && cd ../backend && npm install",
-    "build": "cd frontend && npm run build",
-    "build:frontend": "cd frontend && npm run build"
+    "build": "node init && cd frontend && npm run build",
+    "build:frontend": "node init && cd frontend && npm run build"
   },
   "engines": {
     "node": ">=16.0.0"

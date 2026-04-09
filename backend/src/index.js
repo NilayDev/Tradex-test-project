@@ -7,6 +7,7 @@ const discussionRoutes = require('./routes/discussion');
 const strategyRoutes = require('./routes/strategy');
 const { errorHandler } = require('./middleware/errorHandler');
 const logger = require('./middleware/logger');
+const quoteRoutes = require('./routes/quotes');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -24,6 +25,7 @@ app.get('/health', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/discussions', discussionRoutes);
 app.use('/api/strategies', strategyRoutes);
+app.use('/api/market', quoteRoutes);
 
 // Error handling
 app.use(errorHandler);
